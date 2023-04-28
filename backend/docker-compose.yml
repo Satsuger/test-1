@@ -1,0 +1,15 @@
+version: '3'
+services: 
+  db1:
+    container_name: test-db
+    image: postgres:latest
+    ports: 
+      - '5432:5432'
+    environment: 
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:

@@ -9,10 +9,10 @@ const ImageGallery = ({images}: {images: ImageDto[]}) => (
         <div className="img-wrapper">
           <img src={thumbnailUrl || url} alt={title} />
         </div>
-
+{/* 
         <div className="edit">
-          <Icon.Edit height='14px' />
-        </div>
+          <Icon.Edit />
+        </div> */}
         
         <h3 className="image-title">
           {title}

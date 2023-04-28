@@ -15,8 +15,9 @@ export class ApiImagesService {
 
     return response.data[0].map(({ albumId, id, title, path }) => {
       return {
-        albumId,
         id,
+        uuid: `${id}-${albumId}`,
+        albumId,
         title,
         url: path,
         thumbnailUrl: undefined,

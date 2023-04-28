@@ -17,4 +17,7 @@ export class CreateImageDto {
 
   @Transform(({ value }) => undefined, { toClassOnly: true })
   id?: number;
+
+  @Transform(({ value }) => undefined, { toClassOnly: true })
+  uuid?: string;
 }

@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
-import { Observable } from 'rxjs';
 import { firstValueFrom } from 'rxjs';
 import { Image } from '../images/entities/image.entity';
 
@@ -14,6 +13,15 @@ export class ApiPhotosService {
   async findAll(): Promise<Image[]> {
     const response = await firstValueFrom(this.httpService.get(this.photosUrl));
 
-    return response.data[0];
+    return response.data[0].map(({ albumId, id, title, url, thumbnailUrl }) => {
+      return {
+        id,
+        uuid: `${id}-${albumId}`,
+        albumId,
+        title,
+        url,
+        thumbnailUrl,
+      };
+    });
   }
 }

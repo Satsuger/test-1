@@ -6,6 +6,9 @@ export class Image {
   id: number;
 
   @Column()
+  uuid: string;
+
+  @Column()
   albumId: number;
 
   @Column()
