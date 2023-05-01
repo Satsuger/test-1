@@ -5,7 +5,7 @@ import { ApiImagesService } from '../api-images/api-images.service';
 import { ApiPhotosService } from '../api-photos/api-photos.service';
 import { Image } from './entities/image.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, FindOneOptions } from 'typeorm';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class ImagesService {
